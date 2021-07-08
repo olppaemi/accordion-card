@@ -1,0 +1,116 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    margin: 0;
+}
+
+body {
+    height: 100vh;
+    font-family: 'Kumbh Sans', sans-serif;
+    font-size: 1.2rem;
+    color: $xdblue;
+    background-image: linear-gradient($soft-violet, $soft-blue);
+    background-repeat: no-repeat;
+    // overflow: hidden;
+    display: flex;
+    justify-content: center;
+    padding: 10rem 1rem;
+}
+
+
+.card {
+    background-color: white;
+    border-radius: 2rem;
+    padding-top: 11rem;
+    padding-left: 2.5rem;
+    padding-right: 2.2rem;
+    width: 33rem;
+    height: 600px;
+
+    background-image: url("/images/bg-pattern-mobile.svg");
+    background-repeat: no-repeat;
+    background-position: center top;
+
+    &__image {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+
+        .mobile-img {
+            position: absolute;
+            top: -20.5rem;
+            max-width: 240px;
+        }
+
+        .desktop-img {
+            display: none;
+        }
+    }
+
+    &__body {
+        h1 {
+            text-align: center;
+        }
+    }
+
+    .desktop-img-box {
+        display: none;
+    }
+}
+
+@media(min-width: 800px) {
+
+    .card {
+        display: flex;
+        width: 930px;
+        height: 510px;
+        padding: 5.8rem 9.6rem 5rem 0;
+
+        background-image: url("/images/bg-pattern-desktop.svg");
+        background-repeat: no-repeat;
+        background-size: 80%;
+        background-position: -35rem -11rem;
+        position: relative;
+
+        &__body {
+            flex: 1;
+
+            h1 {                
+                text-align: left;
+                padding-bottom: 2.875rem;
+                margin-bottom: 0;
+            }
+        }
+
+        &__image {
+            flex: 1;
+            overflow: hidden;
+
+            .mobile-img {
+                display: none;
+            }
+
+            .desktop-img {
+                display: block;
+                position: absolute;
+                top: 0;
+                left: -8rem;
+                max-width: 450px;
+            }
+        }
+
+        .desktop-img-box {
+            display: block;
+            position: absolute;
+            top: 18.5rem;
+            left: -10rem;
+            z-index: 1;
+        }
+    }
+}
