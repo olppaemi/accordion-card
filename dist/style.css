@@ -1,0 +1,267 @@
+:root {
+  --desaturated-blue: hsl(238, 29%, 16%);
+  --soft-red: hsl(14, 88%, 65%);
+  --soft-violet: hsl(273, 75%, 66%);
+  --soft-blue: hsl(240, 73%, 65%);
+  --xdark-gray-blue: hsl(237, 12%, 33%);
+  --dark-gray-blue: hsl(240, 6%, 50%);
+  --light-gray-blue: hsl(240, 5%, 91%);
+}
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 100%;
+  color: var(--desaturated-blue);
+}
+
+body {
+  font-family: "Kumbh Sans", sans-serif;
+  font-size: 0.75rem;
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: -webkit-gradient(linear, left top, left bottom, from(var(--soft-violet)), to(var(--soft-blue)));
+  background: linear-gradient(to bottom, var(--soft-violet), var(--soft-blue));
+}
+
+@media (max-width: 71.8125em) {
+  body {
+    padding-top: 9.25rem;
+    padding-bottom: 5.3125rem;
+  }
+}
+
+.container {
+  position: relative;
+  background-color: white;
+  border-radius: 15px;
+}
+
+@media (max-width: 71.8125em) {
+  .container {
+    width: 87%;
+    height: 33.4375rem;
+    padding-top: 8.625rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (min-width: 71.875em) {
+  .container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    width: 57.5rem;
+    height: 31.875rem;
+  }
+}
+
+@media (max-width: 71.8125em) {
+  .container h1 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+}
+
+@media (min-width: 71.875em) {
+  .container h1 {
+    margin-bottom: 2rem;
+  }
+}
+
+button {
+  background: transparent;
+  border: none;
+}
+
+@media (max-width: 71.8125em) {
+  .image-container {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    -webkit-transform: translate(-50%, -53%);
+            transform: translate(-50%, -53%);
+  }
+}
+
+@media (min-width: 71.875em) {
+  .image-container {
+    position: relative;
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    overflow: hidden;
+  }
+  .image-container .woman-desktop {
+    position: absolute;
+    top: 50%;
+    bottom: 0;
+    left: -20%;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+    z-index: 1;
+  }
+}
+
+.bg-pattern-mobile {
+  position: absolute;
+  top: 6.25rem;
+  left: 1.5625rem;
+}
+
+.bg-pattern-desktop {
+  position: absolute;
+  right: 8%;
+  bottom: -26%;
+}
+
+.box {
+  position: absolute;
+  -webkit-transform: translate(-50%, 114%);
+          transform: translate(-50%, 114%);
+  z-index: 10;
+}
+
+@media (max-width: 71.8125em) {
+  .hide-for-mobile {
+    display: none;
+  }
+}
+
+@media (min-width: 71.875em) {
+  .hide-for-desktop {
+    display: none;
+  }
+}
+
+@media (min-width: 71.875em) {
+  .accordion {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    padding-left: 0.75rem;
+    padding-right: 4rem;
+  }
+}
+
+.accordion-item {
+  border-bottom: 1px solid var(--light-gray-blue);
+}
+
+.accordion-header {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
+@media (min-width: 71.875em) {
+  .accordion-header {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+}
+
+.accordion-button {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+}
+
+.accordion-button.show {
+  font-weight: 700;
+}
+
+.accordion-button:hover {
+  color: var(--soft-red);
+}
+
+.accordion-button::after {
+  display: block;
+  content: "";
+  width: 1rem;
+  height: 1rem;
+  background: url("/images/icon-arrow-down.svg") no-repeat;
+  background-position: center;
+  -webkit-transition: -webkit-transform 300ms ease-out;
+  transition: -webkit-transform 300ms ease-out;
+  transition: transform 300ms ease-out;
+  transition: transform 300ms ease-out, -webkit-transform 300ms ease-out;
+}
+
+.accordion-button.show::after {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+@media (min-width: 71.875em) {
+  .accordion-collapse {
+    padding-bottom: 1rem;
+  }
+}
+
+.accordion-collapse.collapse {
+  display: none;
+}
+
+.accordion-collapse.show {
+  display: block;
+  padding-bottom: 0.75rem;
+  -webkit-animation: slide-down 300ms ease-out;
+          animation: slide-down 300ms ease-out;
+}
+
+.accordion-body {
+  color: var(--xdark-gray-blue);
+  line-height: 1.6;
+}
+
+@-webkit-keyframes slide-down {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slide-down {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

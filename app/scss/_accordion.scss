@@ -1,0 +1,84 @@
+.accordion {
+  @include breakpoint(large) {
+    flex: 1;
+    padding-top: rem(64);
+    padding-bottom: rem(64);
+    padding-left: rem(12);
+    padding-right: rem(64);
+  }
+}
+
+.accordion-item {
+  border-bottom: 1px solid var(--light-gray-blue);
+}
+
+.accordion-header {
+  padding-top: rem(12);
+  padding-bottom: rem(12);
+
+  @include breakpoint(large) {
+    padding-top: rem(16);
+    padding-bottom: rem(16);
+  }
+}
+
+.accordion-button {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+
+  &.show {
+    font-weight: 700;
+  }
+
+  &:hover {
+    color: var(--soft-red);
+  }
+
+  &::after {
+    display: block;
+    content: "";
+    width: 1rem;
+    height: 1rem;
+    background: url("/images/icon-arrow-down.svg") no-repeat;
+    background-position: center;
+    transition: transform 300ms ease-out;
+  }
+
+  &.show::after {
+    transform: rotate(180deg);
+  }
+}
+
+.accordion-collapse {
+  @include breakpoint(large) {
+    padding-bottom: rem(16);
+  }
+
+  &.collapse {
+    display: none;
+  }
+
+  &.show {
+    display: block;
+    padding-bottom: rem(12);
+    animation: slide-down 300ms ease-out;
+  }
+}
+
+.accordion-body {
+  color: var(--xdark-gray-blue);
+  line-height: 1.6;
+}
+
+@keyframes slide-down {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

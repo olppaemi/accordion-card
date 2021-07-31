@@ -1,0 +1,128 @@
+:root {
+  --desaturated-blue: hsl(238, 29%, 16%);
+  --soft-red: hsl(14, 88%, 65%);
+  --soft-violet: hsl(273, 75%, 66%);
+  --soft-blue: hsl(240, 73%, 65%);
+  --xdark-gray-blue: hsl(237, 12%, 33%);
+  --dark-gray-blue: hsl(240, 6%, 50%);
+  --light-gray-blue: hsl(240, 5%, 91%);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 100%;
+  color: var(--desaturated-blue);
+}
+
+body {
+  font-family: "Kumbh Sans", sans-serif;
+  font-size: rem(12);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to bottom, var(--soft-violet), var(--soft-blue));
+
+  @include breakpoint-down(medium) {
+    padding-top: rem(148);
+    padding-bottom: rem(85);
+  }
+}
+
+.container {
+  position: relative;
+  background-color: white;
+  border-radius: 15px;
+
+  @include breakpoint-down(medium) {
+    width: 87%;
+    height: rem(535);
+    padding-top: rem(138);
+    padding-left: rem(24);
+    padding-right: rem(24);
+  }
+
+  @include breakpoint(large) {
+    display: flex;
+    flex-direction: row;
+    width: rem(920);
+    height: rem(510);
+  }
+
+  h1 {
+    @include breakpoint-down(medium) {
+      text-align: center;
+      margin-bottom: rem(24);
+    }
+
+    @include breakpoint(large) {
+      margin-bottom: rem(32);
+    }
+  }
+}
+
+button {
+  background: transparent;
+  border: none;
+}
+
+.image-container {
+  @include breakpoint-down(medium) {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -53%);
+  }
+
+  @include breakpoint(large) {
+    position: relative;
+    flex: 1;
+    overflow: hidden;
+
+    .woman-desktop {
+      position: absolute;
+      top: 50%;
+      bottom: 0;
+      left: -20%;
+      transform: translateY(-50%);
+      z-index: 1;
+    }
+  }
+}
+
+.bg-pattern-mobile {
+  position: absolute;
+  top: rem(100);
+  left: rem(25);
+}
+
+.bg-pattern-desktop {
+  position: absolute;
+  right: 8%;
+  bottom: -26%;
+}
+
+.box {
+  position: absolute;
+  transform: translate(-50%, 114%);
+  z-index: 10;
+}
+
+.hide-for-mobile {
+  @include breakpoint-down(medium) {
+    display: none;
+  }
+}
+
+.hide-for-desktop {
+  @include breakpoint(large) {
+    display: none;
+  }
+}
